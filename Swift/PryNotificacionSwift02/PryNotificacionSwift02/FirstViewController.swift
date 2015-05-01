@@ -29,6 +29,7 @@ class FirstViewController: UIViewController {
   
   @IBAction func btnContador02(sender: AnyObject) {
     NSNotificationCenter.defaultCenter().postNotificationName("Test02", object: nil)
+    println("Hola")
   }
   
 }

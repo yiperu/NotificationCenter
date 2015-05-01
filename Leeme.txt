@@ -17,9 +17,26 @@ Aqui un Snippet:
 
 
 // the function specified in the same class where we defined the addObserver
-
 -(void) showMainMenu:(NSNotification *)notificacion{
   if ([[notificacion name] isEqualToString:@"loginComplete"]) {
     NSLog(@"Received Notification - Someone seems to have logged in"); 
   } 
 }
+
+
+// Para Swift:
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+// Add an observer that will respond to loginComplete
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "showMainMenu:", name: "loginComplete", object: nil)
+    
+// Post a notification to loginComplete  
+	NSNotificationCenter.defaultCenter().postNotificationName("loginComplete", object: nil)
+
+// the function specified in the same class where we defined the addObserver
+  func recibeNoti(notification: NSNotification){
+    
+    if(notification.name == "Test01"){
+    println("Received Notification - Someone seems to have logged in")
+    }    
+  }
