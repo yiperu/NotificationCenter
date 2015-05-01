@@ -1,1 +1,25 @@
 Leeme:
+
+Aqui un Snippet:
+
+
+ // Add an observer that will respond to loginComplete
+ [[NSNotificationCenter defaultCenter] addObserver:self 
+                                              selector:@selector(showMainMenu:) 
+                                                  name:@"loginComplete" object:nil];
+ 
+ 
+ 
+
+ // Post a notification to loginComplete
+ [[NSNotificationCenter defaultCenter] postNotificationName:@"loginComplete" object:nil];
+ 
+
+
+// the function specified in the same class where we defined the addObserver
+
+-(void) showMainMenu:(NSNotification *)notificacion{
+  if ([[notificacion name] isEqualToString:@"loginComplete"]) {
+    NSLog(@"Received Notification - Someone seems to have logged in"); 
+  } 
+}
