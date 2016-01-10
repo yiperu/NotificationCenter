@@ -49,7 +49,8 @@
 
 - (IBAction)btnVerde:(id)sender {
   
-  [[NSNotificationCenter defaultCenter] postNotificationName:@"notiVerde" object:nil];
+  NSDictionary *myDic = @{@"key1":@"Henry Ambicho"};
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"notiVerde" object:myDic];
   
   
 }

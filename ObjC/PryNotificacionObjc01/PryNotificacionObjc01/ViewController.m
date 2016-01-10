@@ -28,8 +28,19 @@
 
 
 -(void)cambiarFondoV1:(NSNotification *) notificacion{
+  
+  NSObject * obj = [notificacion object];
+  if ([obj isKindOfClass:[NSDictionary class]]) {
+    NSDictionary *myDic2 = (NSDictionary*)obj;
+    NSLog(@"El dato recibido es: %@",[myDic2 objectForKey:@"key1"]);
+  } else {
+  
+  }
 
+  if ([[notificacion name] isEqualToString:@"notiVerde"]) {
   self.view.backgroundColor = [UIColor greenColor];
+  }
+
 }
 
 
